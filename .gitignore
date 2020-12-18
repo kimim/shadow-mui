@@ -12,7 +12,6 @@ profiles.clj
 .shadow-cljs
 package.json
 package-lock.json
-shadow-cljs.edn
 node_modules
 log
 dev-config.edn
