@@ -1,0 +1,13 @@
+{
+    "dependencies": {
+        "@material-ui/core": "4.11.0",
+        "@material-ui/data-grid": "^4.0.0-alpha.11",
+        "@material-ui/icons": "4.9.1",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
+        "shadow-cljs": "^2.11.8"
+    },
+    "devDependencies": {
+        "xmlhttprequest": "^1.8.0"
+    }
+}
