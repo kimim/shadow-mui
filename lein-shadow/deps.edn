@@ -2,6 +2,7 @@
  :aliases {:run
            {:jvm-opts ["-Dconf=dev-config.edn"]
             :extra-paths ["env/dev/clj"]
+            :resource-paths ["resources" "target/cljsbuild" "env/dev/resources"]
             :main-opts ["-m" "vorstellung.core"]}
            :test
            {:jvm-opts ["-Dconf=test-config.edn"]
