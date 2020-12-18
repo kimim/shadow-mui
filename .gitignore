@@ -19,3 +19,4 @@ test-config.edn
 *.db
 .DS_Store
 .cpcache
+lein-shadow/shadow-cljs.edn
