@@ -27,8 +27,5 @@
         [:> m/Typography {:variant "inherit" :noWrap true :style {:flexGrow 1}} "Menu"]
         (if open? [:> ExpandLess] [:> ExpandMore])]
        [:> m/Collapse {:in open?}
-        [:div {:style {:background "red"}}
-         [menu/item "/app/#/table" ViewComfy       "Table"]]
-        [menu/item "/app/#/about" GridOn          "Menu Item 1"]
-        [menu/item "/app/#/about" BackupOutlined  "Menu Item 2"]
-        [menu/item "/app/#/about" Today           "Menu Item 3"]]])))
+        [menu/item "/#/table" ViewComfy       "Table"]
+        [menu/item "/#/chart" GridOn          "Chart"]]])))

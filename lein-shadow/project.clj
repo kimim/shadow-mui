@@ -71,7 +71,7 @@
   :clean-targets ^{:protect false} [:target-path "target/cljsbuild"]
   :profiles
   {:uberjar {:omit-source true
-             :prep-tasks ["compile" ["shadow" "release" "app" "login" "icons" "charts" "material"]]
+             :prep-tasks ["compile" ["shadow" "release" "app"]]
              :aot :all
              :uberjar-name "vorstellung.jar"
              :source-paths ["env/prod/clj"  "env/prod/cljs" ]
@@ -111,15 +111,6 @@
      :output-dir "target/cljsbuild/public/js"
      :asset-path "/js"
      :modules {:app {:entries [vorstellung.app]}}
-     :devtools
-     {:watch-dir "resources/public" :preloads [re-frisk.preload]}
-     :dev
-     {:closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}}}
-    :home
-    {:target :browser
-     :output-dir "target/cljsbuild/public/js"
-     :asset-path "/js"
-     :modules {:home {:entries [vorstellung.home]}}
      :devtools
      {:watch-dir "resources/public" :preloads [re-frisk.preload]}
      :dev

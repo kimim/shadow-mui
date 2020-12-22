@@ -4,35 +4,19 @@
    [ring.util.response :refer [redirect]]
    [ring.util.http-response :as response]
    [buddy.auth :refer [authenticated?]]
-   [vorstellung.db.core :as db]
    [vorstellung.layout :as layout]
    [vorstellung.middleware :as middleware]
-   [vorstellung.auth.session :as auth]
    [vorstellung.upload :as upload]))
 
 (defn home-page [request app]
   (layout/render request "home.html" {:script app}))
-
-(defn signup [request]
-  (try
-    (db/create-user! (:params request))
-    (auth/signin request)
-    (catch Exception e
-      (print e)
-      {:status 400
-       :body {:message "Already created"}})))
 
 (defn home-routes []
   [""
    {:middleware [#_middleware/wrap-csrf
                  #_auth/wrap-auth
                  middleware/wrap-formats]}
-   ["/"         {:get #(home-page % "/js/home.js")}]
-   ["/app/"     {:get #(home-page % "/js/app.js")}]
-   ["/login" {:get auth/login
-              :post auth/signin}]
-   ["/logout" {:get auth/logout}]
-   ["/signup" {:post signup}]
+   ["/"         {:get #(home-page % "/js/app.js")}]
    ["/upload" {:post upload/upload}]
    ["/docs" {:get (fn [_]
                     (-> (response/ok (-> "README.md" #_io/resource slurp))
