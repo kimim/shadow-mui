@@ -4,26 +4,19 @@ Two test project in this repo:
 
 For lein-shadow, run two cmd in two terminals:
 
-    lein run
-    lein shadow watch home app
+    lein shadow npm-deps
+    lein shadow watch app
 
-or
+Then visit: http://localhost:8000
 
-    clj -M:run
-    lein shadow watch home app
-
-Then visit: http://localhost:3030
-
-In both methods, material UI works fine.
+Material UI works fine.
 
 
 For shadow-cljs, run two cmd in two terminals:
 
-    clj -M:run
-
     npm install
     shadow-cljs watch home app
 
-Then visit: http://localhost:3030
+Then visit: http://localhost:8000
 
-If you click the RED menu item, the menu structure is in chaos!
+The menu structure is in chaos!
