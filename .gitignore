@@ -19,3 +19,4 @@ log
 lein-shadow/shadow-cljs.edn
 lein-shadow/package.json
 lein-shadow/resources/public/js
+shadow-cljs/resources/public/js

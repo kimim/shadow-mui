@@ -1,8 +1,6 @@
 For shadow-cljs, run two cmd in two terminals:
 
-    clj -M:run
-
     npm install
-    shadow-cljs watch home app
+    shadow-cljs watch app
 
-Then visit: [http://localhost:3030](http://localhost:3030)
+Then visit: [http://localhost:8000](http://localhost:8000)
