@@ -14,7 +14,8 @@
    [vorstellung.common.ajax :as ajax]
    [vorstellung.events]
    [vorstellung.header :as header]
-   [vorstellung.app.table :as table])
+   [vorstellung.app.table :as table]
+   [vorstellung.app.chart :as chart])
   (:import goog.History))
 
 (defn about-page []
@@ -33,6 +34,8 @@
                  :controllers   [{:start (fn [_] (rf/dispatch [:page/init-home]))}]}]
      ["/table"  {:name          ::table
                  :view          #'table/page}]
+     ["/chart"  {:name          ::chart
+                 :view          #'chart/page}]
      ["/about"  {:name          ::about
                  :view          #'about-page}]]))
 

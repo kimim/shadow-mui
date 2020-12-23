@@ -56,21 +56,4 @@
 
 (defn -main [& args]
   (mount/start #'vorstellung.config/env)
-  (cond
-    (nil? (:database-url env))
-    (do
-      (log/error "Database config not found, :database-url env variable must be set before running")
-      (System/exit 1))
-    (some #{"init"} args)
-    (do
-      (migrations/init (select-keys env [:database-url :init-script]))
-      (System/exit 0))
-    (migrations/migration? args)
-    (do
-      (migrations/migrate args (select-keys env [:database-url]))
-      (System/exit 0))
-    (some #{"create-migrate"} args)
-    (do
-      (migrations/create (get (vec args) 1) (select-keys env [:database-url])))
-    :else
-    (start-app args)))
+  (start-app args))

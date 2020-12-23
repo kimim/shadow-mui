@@ -13,9 +13,7 @@
    [ring.middleware.defaults :refer [site-defaults wrap-defaults]]
    [buddy.auth.middleware :refer [wrap-authentication wrap-authorization]]
    [buddy.auth :refer [authenticated?]]
-   [buddy.auth.accessrules :refer [restrict]]
-   [vorstellung.auth.session :as auth]
-   ))
+   [buddy.auth.accessrules :refer [restrict]]))
 
 (defn wrap-internal-error [handler]
   (fn [req]
@@ -54,7 +52,6 @@
 
 (defn wrap-base [handler]
   (-> ((:middleware defaults) handler)
-      auth/wrap-auth
       (wrap-defaults
         (-> site-defaults
             (assoc-in [:security :anti-forgery] false)
