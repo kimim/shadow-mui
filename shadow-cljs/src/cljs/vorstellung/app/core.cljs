@@ -29,7 +29,7 @@
 (def router
   (reitit/router
     [["/"       {:name          ::home
-                 :view          home-page
+                 :view          #'table/page
                  :controllers   [{:start (fn [_] (rf/dispatch [:page/init-home]))}]}]
      ["/table"  {:name          ::table
                  :view          #'table/page}]
