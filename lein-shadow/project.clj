@@ -105,10 +105,11 @@
 
   :shadow-cljs
   {:nrepl {:port 7002}
+   :dev-http {8000 "resources/public"}
    :builds
    {:app
     {:target :browser
-     :output-dir "target/cljsbuild/public/js"
+     :output-dir "resources/public/js"
      :asset-path "/js"
      :modules {:app {:entries [vorstellung.app]}}
      :devtools
